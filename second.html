@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Second Page</title>
+    <script src="js/Test.js"></script>
+</head>
+<body>
+<form>
+    ZIP:<br>
+    <input title="zipField" type="text" id="zip" onBlur="fillCity();"><br>
+    City:<br>
+    <input title="cityField" type="text" id="city">
+</form>
+
+<p id="slowLoris">
+    Slow lorises are a group of several species of strepsirrhine primates which make up the genus Nycticebus.
+    <a href="javascript:void(0);" onClick="expandLoris();"><em>Click for more.</em></a>
+</p>
+
+<br>
+<div id="lorisList" onmouseover="placeAList()">This is List</div>
+
+<br>
+<p>*******************************************</p>
+<p>***************************************</p>
+<p>***********************************</p>
+<p>***********************************</p>
+<p>***************************************</p>
+<p>*******************************************</p>
+<h2 id="content" onmouseover="peekAtContent();">This is example of <em>innerHTML</em></h2>
+<p id="thisIsEffect">This is what is going on</p>
+</body>
+</html>

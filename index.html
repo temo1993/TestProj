@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Index Page</title>
+    <script src="js/Test.js"></script>
+</head>
+<body>
+<a href="JavaScript:void(0)" onClick="alert('Hi');">Click</a>
+<br><br>
+<p>This is just text for test. If you have any questions, let us answer on them: Mail us on help@gonbuy.com</p>
+<button title="clickHi" onclick="sayHello();">Hello</button>
+<button title="clickBye" onclick="sayBye();">Bye</button>
+<br>
+<img src="img/1hello_sypo2.jpg" onmouseover="src='img/1bye_sypo2.jpg'" onmouseout="src='img/1hello_sypo2.jpg'">
+<br>
+Email:<br>
+<input title="Email" type="text" size="30" onFocus="this.style.backgroundColor='yellow';"
+       onBlur="this.style.backgroundColor='white';">
+<br>
+<br>
+<form onSubmit="checkAddress('email');">
+    Email:
+    <input title="emailField" type="text" id="email">
+    <input type="submit" value="Submit">
+</form>
+<a href="second.html" title="secondPage">GO TO second page</a>
+</body>
+</html>
