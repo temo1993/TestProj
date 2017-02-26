@@ -48,3 +48,15 @@ function placeAList() {
 function peekAtContent() {
     document.getElementById("thisIsEffect").innerHTML = document.getElementById("content").innerHTML;
 }
+
+function makeInvisible() {
+    // Assigning a class to an element this way replaces any classes that the element has been
+    // assigned in the static markup.
+    document.getElementById("beautiful").className = "hidden";
+}
+
+function makeBig() {
+    // If you want to add a class to an element, preserving its existing classes, you can do it.
+    document.getElementById("p1").className += " big";
+    document.getElementById("p1").id += " big";
+}
