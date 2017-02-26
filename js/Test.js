@@ -58,5 +58,32 @@ function makeInvisible() {
 function makeBig() {
     // If you want to add a class to an element, preserving its existing classes, you can do it.
     document.getElementById("p1").className += " big";
-    document.getElementById("p1").id += " big";
 }
+
+function swapPic(eId, newPic) {
+    document.getElementById(eId).src = newPic;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
