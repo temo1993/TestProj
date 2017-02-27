@@ -64,10 +64,24 @@ function swapPic(eId, newPic) {
     document.getElementById(eId).src = newPic;
 }
 
+// Getting all elements o the page by id and tag name
+function getElement() {
+    var div = document.getElementById("textDiv");
+    var paragraph = div.getElementsByTagName("p");
+    var div2 = document.getElementById("textDiv2");
+    for (var x = 0; x < paragraph.length; x++){
+        div2.innerHTML += paragraph[x].innerHTML + "<br>";
+        console.log(div2.innerHTML);
+        console.log(div2);
+        console.log(paragraph[x]);
+    }
+}
 
-
-
-
+// Manage html page via dom hierarchy
+function manageViaDOM() {
+    // Displaying text : <p>This is text for test 2</p> from third.html
+    document.getElementById("div3").innerHTML = document.getElementById("textDiv").childNodes[3].innerHTML;
+}
 
 
 

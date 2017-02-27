@@ -6,19 +6,23 @@
     <script src="js/Test.js"></script>
     <link rel="stylesheet" type="text/css" href="css/main.css">
 </head>
-<body>
+<body  onload="getElement(); manageViaDOM();">
 <img src="img/fish1.jpg" id="beautiful" onClick="makeInvisible();">
 <br>
+<div id="textDiv">
 <p id="p1" class="small" onmouseover="makeBig();">This is text for test</p>
-
+    <p>This is text for test 2</p>
+    <p>This is text for test 3</p>
+</div>
 <img src="img/1hello_sypo2.jpg" id="before" onMouseover="swapPic(id,'img/1bye_sypo2.jpg');"
  onmouseout="src='img/1hello_sypo2.jpg'">
 
+<!--Displaying data from paragraph array by function getElement() in Test.js-->
+<div id="textDiv2"></div>
 
+<h2>Using dom hierarchy</h2>
 
-
-
-
+<div id="div3"></div>
 
 </body>
 </html>
