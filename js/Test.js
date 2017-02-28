@@ -83,7 +83,11 @@ function manageViaDOM() {
     document.getElementById("div3").innerHTML = document.getElementById("textDiv").childNodes[3].innerHTML;
 }
 
-
+// Checking a node to see what type it is—element, text, comment,
+function checkNodeType() {
+    var nType = document.childNodes[0].childNodes[1].childNodes[0].innerHTML;
+    console.log(nType);
+}
 
 
 
