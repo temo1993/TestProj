@@ -84,9 +84,23 @@ function manageViaDOM() {
 }
 
 // Checking a node to see what type it is—element, text, comment,
+// If the node is an element like <div> or <p>, the number is 1. If it's a text node,
+// the number is 3.
 function checkNodeType() {
-    var nType = document.childNodes[0].childNodes[1].childNodes[0].innerHTML;
-    console.log(nType);
+    // var nType = document.childNodes[0].childNodes[1].childNodes[0];
+    // console.log(nType.innerHTML);
+
+    var d = document.getElementById("humpty");
+    var pCounter = 0;
+    for (var i = 0; i < d.childNodes.length; i++) {
+        if (d.childNodes[i].nodeType === 1 ) {
+            pCounter++;
+        }
+        if (pCounter === 2) {
+            d.childNodes[i].innerHTML = "All his men.";
+            break;
+        }
+    }
 }
 
 
