@@ -237,10 +237,25 @@ function Plan11(name, price, space, transfer, pages) {
 //     console.log("HERE IS KEY FROM plan 5 - " + plan5[key]);
 // }
 
-console.log("3 plans here - " + " /"
-        + Object.values(plan5) + "/ /"
-        + Object.values(plan6) + "/ /"
-        + Object.values(plan7) + "/");
+// console.log("3 plans here - " + " /"
+//         + Object.values(plan5) + "/ /"
+//         + Object.values(plan6) + "/ /"
+//         + Object.values(plan7) + "/");
+//
+// document.write("3 plans here - " + " /"
+//     + Object.values(plan5) + "/ /"
+//     + Object.values(plan6) + "/ /"
+//     + Object.values(plan7) + "/") ;
+
+function propertyValues(obj) {
+    return Object.keys(obj).map(function (key) {
+        return obj[key];
+    });
+}
+
+document.write("HERE ARE 3 PLANS - ");
+document.write(propertyValues(plan5) + "/ /" + propertyValues(plan6) + "/ /" + propertyValues(plan7) + "/");
+document.write("<br>///END OF : HERE ARE 3 PLANS - ");
 
 
 // In the following code, the constructor creates the same method for every object that is
