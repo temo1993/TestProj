@@ -192,8 +192,9 @@ var plan11 = {
         return bestPrice * 12;
     }
 };
+console.log(plan11.calcAnnual(.80));
 // When you write this.whatever, JavaScript is smart enough to understand that you're
-// referring to a property of the object that's being defined—in this case, plan3.
+// referring to a property of the object that's being defined—in this case, plan11.
 
 
 
@@ -205,13 +206,41 @@ function Plan11(name, price, space, transfer, pages) {
     this.space = space;
     this.transfer = transfer;
     this.pages = pages;
+    console.log("Its inside constructor Plan11");
+    console.log(this.name);
+    console.log(this.price);
+    console.log(this.space);
+    console.log(this.transfer);
+    console.log(this.pages);
 }
 
 // This is the calling code that creates the object for the Basic plan.
-    var plan4 = new Plan11("Basic", 3.99, 100, 1000, 10);
     var plan5 = new Plan11("Basic", 3.99, 100, 1000, 10);
     var plan6 = new Plan11("Premium", 5.99, 500, 5000, 50);
     var plan7 = new Plan11("Ultimate", 9.99, 2000, 20000, 500);
+
+// console.log(Object.values(plan5));
+
+// console.log(Object.keys(plan5));
+
+// The above has a full poly fill but a simplified version is:
+//
+//     var getKeys = function(obj){
+//         var keys = [];
+//         for(var key in obj){
+//             keys.push(key);
+//         }
+//         return keys;
+//     }
+
+// for(var key in plan5){
+//     console.log("HERE IS KEY FROM plan 5 - " + plan5[key]);
+// }
+
+console.log("3 plans here - " + " /"
+        + Object.values(plan5) + "/ /"
+        + Object.values(plan6) + "/ /"
+        + Object.values(plan7) + "/");
 
 
 // In the following code, the constructor creates the same method for every object that is
@@ -246,7 +275,10 @@ var p3 = new Plan12("Ultimate", 9.99, 2000, 20000, 500, [6, 7]);
 
 // Once the objects and their properties and method are created by the code above, this is
 // the code that calls, for example, the method for the Premium plan.
-    var annualPrice = p2.calcAnnual(.85);
+    var annualPrice = p1.calcAnnual(.85);
+    console.log(annualPrice);
+    console.log(p2.calcAnnual(.80));
+    console.log(p3.calcAnnual(.80));
 
 
 
