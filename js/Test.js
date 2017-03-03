@@ -103,19 +103,150 @@ function checkNodeType() {
     }
 }
 
+// Creating property plan1
+var plan1 = {
+    name: "Basic",
+    price: 3.99,
+    space: 100,
+    transfer: 1000,
+    pages: 10,
+    discountMonths: {}
+};
+
+
+function hostingPlan() {
+    plan1.discountMonths = [6, 7, 11];
+    document.write(plan1.discountMonths.toString());
+    document.write("<br>" + plan1.discountMonths[2]);
+
+    plan1.market = "regional";
+    document.write("<br>" + plan1.market);
+
+    document.write("<br><br>");
+
+    plan1.market = undefined;
+    document.write("<br>" + plan1.market);
+
+    // You can delete a property of an object.
+        delete plan1.market;
+    document.write("<br>" + plan1.market);
+
+    // You can check to see if a property of an object exists. true or false
+    var propertyExists = "market" in plan1;
+    document.write("<br>" + propertyExists);
+
+    propertyExists = "name" in plan1;
+    document.write("<br>" + propertyExists);
+}
+
+// Creating property plan2
+var plan2 = {
+    name: "Basic",
+    price: 3.99,
+    space: 100,
+    transfer: 1000,
+    pages: 10,
+    discountMonths: [6, 7]
+};
+
+
+function calcAnnual() {
+    var bestPrice = plan2.price;
+    var currDate = new Date();
+    var thisMo = currDate.getMonth();
+    for (var i = 0; i < plan2.discountMonths.length; i++) {
+        if (plan2.discountMonths[i] === thisMo) {
+            bestPrice = plan2.price * .8;
+            break;
+        }
+    }
+    return bestPrice * 12;
+}
+
+function writeAnnualPrice() {
+    document.write("<br>");
+    document.write(calcAnnual());
+}
+
+// Defining method
+var plan11 = {
+    name: "Basic",
+    price: 3.99,
+    space: 100,
+    transfer: 1000,
+    pages: 10,
+    discountMonths: [6, 7],
+    calcAnnual: function(percentIfDisc) {
+        // A better approach, for reasons that will become clear in subsequent chapters, is to
+        // replace the name of the object(||plan3||) with the keyword ||this||. When JavaScript sees this keyword, it
+        // knows you're referring to the object that's being defined.
+        var bestPrice = this.price;
+        var currDate = new Date();
+        var thisMo = currDate.getMonth();
+        for (var i = 0; i < this.discountMonths.length; i++) {
+            if (this.discountMonths[i] === thisMo) {
+                bestPrice = this.price * percentIfDisc;
+                break;
+            }
+        }
+        return bestPrice * 12;
+    }
+};
+// When you write this.whatever, JavaScript is smart enough to understand that you're
+// referring to a property of the object that's being defined—in this case, plan3.
 
 
 
+// Defining constructor function
+// Function Name is capitalized in this situation
+function Plan11(name, price, space, transfer, pages) {
+    this.name = name;
+    this.price = price;
+    this.space = space;
+    this.transfer = transfer;
+    this.pages = pages;
+}
+
+// This is the calling code that creates the object for the Basic plan.
+    var plan4 = new Plan11("Basic", 3.99, 100, 1000, 10);
+    var plan5 = new Plan11("Basic", 3.99, 100, 1000, 10);
+    var plan6 = new Plan11("Premium", 5.99, 500, 5000, 50);
+    var plan7 = new Plan11("Ultimate", 9.99, 2000, 20000, 500);
 
 
+// In the following code, the constructor creates the same method for every object that is
+// created, as it creates all the properties for each object.
+function Plan12(name, price, space, transfer, pages, discountMonths) {
+    this.name = name;
+    this.price = price;
+    this.space = space;
+    this.transfer = transfer;
+    this.pages = pages;
+    this.discountMonths = discountMonths;
+    this.calcAnnual = function(percentIfDisc) {
+        var bestPrice = this.price;
 
+        var currDate = new Date();
+        var thisMo = currDate.getMonth();
+        for (var i = 0; i < this.discountMonths.length; i++) {
+            if (this.discountMonths[i] === thisMo) {
+                bestPrice = this.price * percentIfDisc;
+                break;
+            }
+        }
+        return bestPrice * 12;
+    };
+}
 
+//This is the code that calls the constructor function to create three new objects that
+// correspond to the three hosting plans.
+var p1 = new Plan12("Basic", 3.99, 100, 1000, 10, [6, 7]);
+var p2 = new Plan12("Premium", 5.99, 500, 5000, 50, [6, 7, 11]);
+var p3 = new Plan12("Ultimate", 9.99, 2000, 20000, 500, [6, 7]);
 
-
-
-
-
-
+// Once the objects and their properties and method are created by the code above, this is
+// the code that calls, for example, the method for the Premium plan.
+    var annualPrice = p2.calcAnnual(.85);
 
 
 
